@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1743,6 +1743,30 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <vertex x="0.6" y="2.2"/>
 </polygon>
 <text x="-6" y="3" size="2" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="MOSFET_N">
+<wire x1="0" y1="0.5" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-0.5" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1" x2="0" y2="-1.5" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.5" x2="0" y2="-2" width="0.1524" layer="94"/>
+<wire x1="0" y1="1" x2="0" y2="1.5" width="0.1524" layer="94"/>
+<wire x1="0" y1="1.5" x2="0" y2="2" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0.5" y2="0.5" width="0.1524" layer="94"/>
+<wire x1="0.5" y1="0.5" x2="0.5" y2="-0.5" width="0.1524" layer="94"/>
+<wire x1="0.5" y1="-0.5" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="1" y2="0" width="0.1524" layer="94"/>
+<wire x1="1" y1="0" x2="1" y2="-1.5" width="0.1524" layer="94"/>
+<wire x1="1" y1="-1.5" x2="0" y2="-1.5" width="0.1524" layer="94"/>
+<wire x1="0" y1="1.5" x2="1" y2="1.5" width="0.1524" layer="94"/>
+<wire x1="-0.5" y1="-2" x2="-0.5" y2="2" width="0.1524" layer="94"/>
+<wire x1="-0.5" y1="-2" x2="-2.5" y2="-2" width="0.1524" layer="94"/>
+<pin name="G" x="-2.5" y="-2" visible="off" length="point"/>
+<wire x1="1" y1="-1.5" x2="1" y2="-3.5" width="0.1524" layer="94"/>
+<wire x1="1" y1="1.5" x2="1" y2="3.5" width="0.1524" layer="94"/>
+<pin name="D" x="1" y="3.5" visible="off" length="point"/>
+<pin name="S" x="1" y="-3.5" visible="off" length="point"/>
+<text x="2" y="1" size="1" layer="95">&gt;NAME</text>
+<text x="2" y="-1.5" size="1" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
