@@ -313,20 +313,16 @@
 <text x="11.1" y="24.94" size="1.27" layer="21">23</text>
 </package>
 <package name="TO-220">
-<pad name="VOUT" x="0" y="0" drill="1" diameter="2"/>
-<pad name="VIN" x="2.54" y="0" drill="1" diameter="2"/>
-<pad name="GND" x="-2.54" y="0" drill="1" diameter="2"/>
+<pad name="2" x="0" y="0" drill="1" diameter="2"/>
+<pad name="3" x="2.54" y="0" drill="1" diameter="2"/>
+<pad name="1" x="-2.54" y="0" drill="1" diameter="2"/>
 <wire x1="-5.3" y1="2.9" x2="5.3" y2="2.9" width="0.01" layer="21"/>
 <wire x1="5.3" y1="2.9" x2="5.3" y2="-1.94" width="0.01" layer="21"/>
 <wire x1="5.3" y1="-1.94" x2="-5.3" y2="-1.94" width="0.01" layer="21"/>
 <wire x1="-5.3" y1="-1.94" x2="-5.3" y2="2.9" width="0.01" layer="21"/>
 <rectangle x1="-5.3" y1="2.12" x2="5.29" y2="2.9" layer="21"/>
-<text x="-2.24" y="1.04" size="1.016" layer="21">VOUT</text>
-<text x="-3.18" y="-1.93" size="1.016" layer="21">G</text>
-<text x="-0.59" y="-1.93" size="1.016" layer="21">O</text>
-<text x="2.34" y="-1.93" size="1.016" layer="21">I</text>
-<text x="-5.27" y="3.12" size="1.016" layer="25">&gt;NAME</text>
-<text x="-5.39" y="-3.12" size="1.016" layer="27">&gt;VALUE</text>
+<text x="-5.3" y="3.12" size="1" layer="25">&gt;NAME</text>
+<text x="-5.39" y="-3.12" size="1" layer="27">&gt;VALUE</text>
 </package>
 <package name="CRS100NF">
 <description>Condensatore elettrolitico passo 2mm piedino 0.5</description>
@@ -2069,9 +2065,9 @@ http://it.rs-online.com/web/p/connettori-rj45/2578779/</description>
 <devices>
 <device name="" package="TO-220">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
-<connect gate="G$1" pin="VOUT" pad="VOUT"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2929,6 +2925,23 @@ DIN A4, landscape with location and doc. field</description>
 <connect gate="G$1" pin="STR" pad="8"/>
 <connect gate="G$1" pin="V+" pad="7"/>
 <connect gate="G$1" pin="V-" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PSMN4R5">
+<gates>
+<gate name="G$1" symbol="MOSFET_N" x="0" y="0"/>
+</gates>
+<devices>
+<device name="TO220" package="TO-220">
+<connects>
+<connect gate="G$1" pin="D" pad="2"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
