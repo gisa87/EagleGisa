@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -326,13 +326,10 @@
 </package>
 <package name="CRS100NF">
 <description>Condensatore elettrolitico passo 2mm piedino 0.5</description>
-<pad name="-" x="-1.3" y="0" drill="1" diameter="2"/>
+<pad name="-" x="-1.3" y="0" drill="1" diameter="2" shape="square"/>
 <pad name="+" x="1.3" y="0" drill="1" diameter="2"/>
-<circle x="0" y="0" radius="2.7" width="0.4" layer="21"/>
-<text x="-3.96" y="-0.88" size="2.1844" layer="21">-</text>
-<text x="2.76" y="-0.92" size="1.778" layer="21">+</text>
-<text x="-4.83" y="3.21" size="1.778" layer="25">&gt;NAME</text>
-<text x="-4.99" y="-4.95" size="1.778" layer="25">&gt;VALUE</text>
+<text x="-2.34" y="1.51" size="1" layer="25">&gt;NAME</text>
+<text x="-2.33" y="-2.34" size="1" layer="25">&gt;VALUE</text>
 </package>
 <package name="IPAK">
 <pad name="G" x="-2.29" y="0" drill="1" diameter="1.9"/>
@@ -452,7 +449,8 @@
 <package name="R_VERT">
 <pad name="2" x="1.3" y="0" drill="1" diameter="2" shape="square"/>
 <pad name="1" x="-1.3" y="0" drill="1" diameter="2"/>
-<text x="-2.58" y="-3.08" size="1.778" layer="25">&gt;NAME</text>
+<text x="-2.33" y="-2.35" size="1" layer="25">&gt;NAME</text>
+<text x="-2.32" y="1.3" size="1" layer="27">&gt;VALUE</text>
 </package>
 <package name="TO-252">
 <smd name="G" x="-2.3" y="-6.9" dx="1.5" dy="2.5" layer="1"/>
@@ -926,9 +924,11 @@
 <text x="1.35" y="9.08" size="1.5" layer="27">&gt;Value</text>
 </package>
 <package name="3P">
-<pad name="P$1" x="0" y="0" drill="0.8" shape="square"/>
-<pad name="P$2" x="2" y="0" drill="0.8" shape="square"/>
-<pad name="P$3" x="4" y="0" drill="0.8" shape="square"/>
+<pad name="1" x="0" y="0" drill="0.8" shape="square"/>
+<pad name="2" x="2" y="0" drill="0.8" shape="long" rot="R90"/>
+<pad name="3" x="4" y="0" drill="0.8" shape="long" rot="R90"/>
+<text x="-0.7" y="1.6" size="1" layer="25">&gt;NAME</text>
+<text x="-0.8" y="-2.7" size="1" layer="27">&gt;VALUE</text>
 </package>
 <package name="3PIN_POT_2.54">
 <pad name="1" x="-2.54" y="0" drill="1" shape="long" rot="R90"/>
@@ -999,6 +999,18 @@
 <package name="HEADER2P_VERT">
 <pad name="P$1" x="-1.27" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="P$2" x="1.27" y="0" drill="0.8" shape="long" rot="R90"/>
+<text x="-2.13" y="1.53" size="1" layer="25">&gt;NAME</text>
+</package>
+<package name="2P">
+<pad name="P$1" x="0" y="0" drill="0.8" shape="square"/>
+<pad name="P$2" x="2" y="0" drill="0.8" shape="square"/>
+</package>
+<package name="FA-238">
+<smd name="NC2" x="1.1" y="-0.8" dx="1.2" dy="1.4" layer="1" rot="R90"/>
+<smd name="XTAL2" x="1.1" y="0.8" dx="1.2" dy="1.4" layer="1" rot="R90"/>
+<smd name="NC1" x="-1.1" y="0.8" dx="1.2" dy="1.4" layer="1" rot="R90"/>
+<smd name="XTAL1" x="-1.1" y="-0.8" dx="1.2" dy="1.4" layer="1" rot="R90"/>
+<text x="-1.8" y="1.7" size="1" layer="25">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -2195,6 +2207,38 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <pin name="P$2" x="-3" y="-1" visible="off" length="point"/>
 <text x="-1" y="2.5" size="1" layer="95">&gt;NAME</text>
 <text x="-1" y="-3.5" size="1" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="DIODE_SCHOTTKI">
+<polygon width="0.2" layer="94">
+<vertex x="-0.5" y="1"/>
+<vertex x="0.5" y="0"/>
+<vertex x="-0.5" y="-1"/>
+</polygon>
+<wire x1="0.5" y1="1.5" x2="0.5" y2="0" width="0.2" layer="94"/>
+<wire x1="0.5" y1="0" x2="0.5" y2="-1.5" width="0.2" layer="94"/>
+<wire x1="0.5" y1="1.5" x2="1" y2="1.5" width="0.2" layer="94"/>
+<wire x1="1" y1="1.5" x2="1" y2="1" width="0.2" layer="94"/>
+<wire x1="0.5" y1="-1.5" x2="0" y2="-1.5" width="0.2" layer="94"/>
+<wire x1="0" y1="-1.5" x2="0" y2="-1" width="0.2" layer="94"/>
+<wire x1="0.5" y1="0" x2="2" y2="0" width="0.2" layer="94"/>
+<wire x1="-0.5" y1="0" x2="-2" y2="0" width="0.2" layer="94"/>
+<pin name="IN" x="-2" y="0" visible="off" length="point"/>
+<pin name="OUT" x="2" y="0" visible="off" length="point"/>
+<text x="-0.5" y="-3" size="1" layer="95">&gt;NAME</text>
+<text x="-0.5" y="2" size="1" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="VOLTREG">
+<pin name="I" x="-10" y="0" visible="pad" length="middle"/>
+<pin name="O" x="10" y="0" visible="pad" length="middle" rot="R180"/>
+<pin name="G" x="0" y="-9.5" visible="pad" length="middle" rot="R90"/>
+<wire x1="5" y1="-4.5" x2="5" y2="2" width="0.2" layer="94"/>
+<wire x1="5" y1="2" x2="-5" y2="2" width="0.2" layer="94"/>
+<wire x1="-5" y1="2" x2="-5" y2="-4.5" width="0.2" layer="94"/>
+<wire x1="-5" y1="-4.5" x2="5" y2="-4.5" width="0.2" layer="94"/>
+<text x="-5" y="2.5" size="1" layer="95">&gt;NAME</text>
+<text x="-5" y="4" size="1" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="78XX">
 </symbol>
 </symbols>
 <devicesets>
@@ -3430,10 +3474,19 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <gate name="G$1" symbol="CRYSTAL" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="16MHZ_TH">
+<device name="TH_2.54" package="16MHZ_TH">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="FA-238" package="FA-238">
+<connects>
+<connect gate="G$1" pin="P$1" pad="XTAL1"/>
+<connect gate="G$1" pin="P$2" pad="XTAL2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -3475,6 +3528,66 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIODE_SCKHOTTKI">
+<gates>
+<gate name="G$1" symbol="DIODE_SCHOTTKI" x="0" y="0"/>
+</gates>
+<devices>
+<device name="TH" package="2P">
+<connects>
+<connect gate="G$1" pin="IN" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="LED" package="LED_3MM">
+<connects>
+<connect gate="G$1" pin="IN" pad="IN"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="DO41" package="DO-41">
+<connects>
+<connect gate="G$1" pin="IN" pad="IN"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="RVERT" package="R_VERT">
+<connects>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="78XX">
+<gates>
+<gate name="G$1" symbol="VOLTREG" x="0" y="0"/>
+</gates>
+<devices>
+<device name="TH254" package="3P">
+<connects>
+<connect gate="G$1" pin="G" pad="2"/>
+<connect gate="G$1" pin="I" pad="1"/>
+<connect gate="G$1" pin="O" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
