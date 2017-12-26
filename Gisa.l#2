@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -315,7 +315,7 @@
 <package name="TO-220">
 <pad name="2" x="0" y="0" drill="1" diameter="2"/>
 <pad name="3" x="2.54" y="0" drill="1" diameter="2"/>
-<pad name="1" x="-2.54" y="0" drill="1" diameter="2"/>
+<pad name="1" x="-2.54" y="0" drill="1" diameter="2" shape="octagon"/>
 <wire x1="-5.3" y1="2.9" x2="5.3" y2="2.9" width="0.01" layer="21"/>
 <wire x1="5.3" y1="2.9" x2="5.3" y2="-1.94" width="0.01" layer="21"/>
 <wire x1="5.3" y1="-1.94" x2="-5.3" y2="-1.94" width="0.01" layer="21"/>
@@ -1032,8 +1032,8 @@
 <text x="-1.96" y="-2.77" size="1" layer="25">&gt;VALUE</text>
 </package>
 <package name="2P_LARGE_SMDPADS">
-<smd name="P$1" x="-3" y="0" dx="4" dy="4" layer="1"/>
-<smd name="P$2" x="3" y="0" dx="4" dy="4" layer="1"/>
+<smd name="L" x="-3" y="0" dx="4" dy="4" layer="1"/>
+<smd name="R" x="3" y="0" dx="4" dy="4" layer="1"/>
 <text x="-5.02" y="2.5" size="1" layer="25">&gt;NAME</text>
 <text x="-5.01" y="-3.2" size="1" layer="25">&gt;VALUE</text>
 </package>
@@ -1735,17 +1735,6 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <vertex x="1.5" y="-2.5"/>
 </polygon>
 </symbol>
-<symbol name="VOLTAGE_REGULATOR">
-<pin name="GND" x="0" y="-9" visible="pad" length="middle" rot="R90"/>
-<pin name="VOUT" x="12" y="0" visible="pad" length="middle" rot="R180"/>
-<pin name="VIN" x="-12" y="0" visible="pad" length="middle"/>
-<wire x1="7" y1="-4" x2="7" y2="4" width="0.2" layer="94"/>
-<wire x1="7" y1="4" x2="-7" y2="4" width="0.2" layer="94"/>
-<wire x1="-7" y1="4" x2="-7" y2="-4" width="0.2" layer="94"/>
-<wire x1="-7" y1="-4" x2="7" y2="-4" width="0.2" layer="94"/>
-<text x="-7" y="5" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7" y="8" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
 <symbol name="SHORTERV2">
 <polygon width="0.2" layer="94">
 <vertex x="-1" y="0.5"/>
@@ -2262,6 +2251,19 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <wire x1="-5" y1="-4.5" x2="5" y2="-4.5" width="0.2" layer="94"/>
 <text x="-5" y="2.5" size="1" layer="95">&gt;NAME</text>
 <text x="-5" y="4" size="1" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="VOLTAGE_REG">
+<description>&lt;h4&gt;Voltage regulator 78xx series&lt;/h4&gt;
+Voltage regulators of the LM78xx family.</description>
+<pin name="VIN" x="-12" y="0" length="middle"/>
+<pin name="OUT" x="12.5" y="0" length="middle" rot="R180"/>
+<pin name="GND" x="0" y="-10" length="middle" rot="R90"/>
+<wire x1="-7" y1="3" x2="7.5" y2="3" width="0.2" layer="94"/>
+<wire x1="7.5" y1="3" x2="7.5" y2="-5" width="0.2" layer="94"/>
+<wire x1="7.5" y1="-5" x2="-7" y2="-5" width="0.2" layer="94"/>
+<wire x1="-7" y1="-5" x2="-7" y2="3" width="0.2" layer="94"/>
+<text x="-7" y="3.5" size="1" layer="95">&gt;NAME</text>
+<text x="-7" y="5" size="1" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -3192,23 +3194,6 @@ http://it.rs-online.com/web/p/connettori-rj45/2578779/</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DC_DC_CONVERTER">
-<gates>
-<gate name="G$1" symbol="VOLTAGE_REGULATOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="RECOM_R785">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
-<connect gate="G$1" pin="VOUT" pad="VOUT"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="SHORTERV2">
 <gates>
 <gate name="G$1" symbol="SHORTERV2" x="0" y="0"/>
@@ -3584,6 +3569,10 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 </technologies>
 </device>
 <device name="" package="2P_LARGE_SMDPADS">
+<connects>
+<connect gate="G$1" pin="P$1" pad="L"/>
+<connect gate="G$1" pin="P$2" pad="R"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -3633,17 +3622,29 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 </device>
 </devices>
 </deviceset>
-<deviceset name="78XX">
+<deviceset name="LM78XX">
 <gates>
-<gate name="G$1" symbol="VOLTREG" x="0" y="0"/>
+<gate name="G$1" symbol="VOLTAGE_REG" x="0" y="0"/>
 </gates>
 <devices>
-<device name="TH254" package="3P">
+<device name="" package="TO-220">
 <connects>
-<connect gate="G$1" pin="G" pad="2"/>
-<connect gate="G$1" pin="I" pad="1"/>
-<connect gate="G$1" pin="O" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="IRF540NPBF">
+<gates>
+<gate name="G$1" symbol="MOSFET_N-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO-220">
 <technologies>
 <technology name=""/>
 </technologies>
