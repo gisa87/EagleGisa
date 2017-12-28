@@ -315,7 +315,7 @@
 <package name="TO-220">
 <pad name="2" x="0" y="0" drill="1" diameter="2"/>
 <pad name="3" x="2.54" y="0" drill="1" diameter="2"/>
-<pad name="1" x="-2.54" y="0" drill="1" diameter="2"/>
+<pad name="1" x="-2.54" y="0" drill="1" diameter="2" shape="octagon"/>
 <wire x1="-5.3" y1="2.9" x2="5.3" y2="2.9" width="0.01" layer="21"/>
 <wire x1="5.3" y1="2.9" x2="5.3" y2="-1.94" width="0.01" layer="21"/>
 <wire x1="5.3" y1="-1.94" x2="-5.3" y2="-1.94" width="0.01" layer="21"/>
@@ -1036,6 +1036,13 @@
 <smd name="R" x="3" y="0" dx="4" dy="4" layer="1"/>
 <text x="-5.02" y="2.5" size="1" layer="25">&gt;NAME</text>
 <text x="-5.01" y="-3.2" size="1" layer="25">&gt;VALUE</text>
+</package>
+<package name="DPAK-3">
+<smd name="2" x="0" y="0" dx="5.8" dy="6.2" layer="1" rot="R90"/>
+<smd name="3" x="7.18" y="2.285" dx="3" dy="1.6" layer="1" rot="R180"/>
+<smd name="1" x="7.18" y="-2.285" dx="3" dy="1.6" layer="1" rot="R180"/>
+<text x="-3.12" y="3.74" size="1" layer="25">&gt;NAME</text>
+<text x="-3.18" y="-4.47" size="1" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -2220,7 +2227,6 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <pin name="P$1" x="-3" y="1" visible="off" length="point"/>
 <pin name="P$2" x="-3" y="-1" visible="off" length="point"/>
 <text x="-1" y="2.5" size="1" layer="95">&gt;NAME</text>
-<text x="-1" y="-3.5" size="1" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="DIODE_SCHOTTKI">
 <polygon width="0.2" layer="94">
@@ -3321,6 +3327,15 @@ http://it.rs-online.com/web/p/connettori-rj45/2578779/</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="0805" package="0805">
+<connects>
+<connect gate="G$1" pin="IN" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
@@ -3627,11 +3642,38 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <gate name="G$1" symbol="VOLTAGE_REG" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TO-220">
+<device name="TO-220" package="TO-220">
 <connects>
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="OUT" pad="3"/>
 <connect gate="G$1" pin="VIN" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="DPAK-3">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="IRF540NPBF">
+<gates>
+<gate name="G$1" symbol="MOSFET_N-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO-220">
+<connects>
+<connect gate="G$1" pin="D" pad="2"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
