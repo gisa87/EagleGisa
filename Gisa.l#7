@@ -1037,6 +1037,13 @@
 <text x="-5.02" y="2.5" size="1" layer="25">&gt;NAME</text>
 <text x="-5.01" y="-3.2" size="1" layer="25">&gt;VALUE</text>
 </package>
+<package name="DPAK-3">
+<smd name="2" x="0" y="0" dx="5.8" dy="6.2" layer="1" rot="R90"/>
+<smd name="3" x="7.18" y="2.285" dx="3" dy="1.6" layer="1" rot="R180"/>
+<smd name="1" x="7.18" y="-2.285" dx="3" dy="1.6" layer="1" rot="R180"/>
+<text x="-3.12" y="3.74" size="1" layer="25">&gt;NAME</text>
+<text x="-3.18" y="-4.47" size="1" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ETHERNET_RJ45_FEM_PCB">
@@ -3320,6 +3327,15 @@ http://it.rs-online.com/web/p/connettori-rj45/2578779/</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="0805" package="0805">
+<connects>
+<connect gate="G$1" pin="IN" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
@@ -3626,7 +3642,17 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <gate name="G$1" symbol="VOLTAGE_REG" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TO-220">
+<device name="TO-220" package="TO-220">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="DPAK-3">
 <connects>
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="OUT" pad="3"/>
