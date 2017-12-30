@@ -464,10 +464,10 @@
 <smd name="P$3" x="3.37" y="-9.12" dx="1.524" dy="2.28" layer="1" rot="R180"/>
 </package>
 <package name="SOT-223">
-<smd name="GND" x="-2.3" y="-3.25" dx="1.4" dy="1.7" layer="1" rot="R180"/>
-<smd name="OUT" x="0" y="-3.25" dx="1.4" dy="1.7" layer="1" rot="R180"/>
-<smd name="IN" x="2.3" y="-3.25" dx="1.4" dy="1.7" layer="1" rot="R180"/>
-<smd name="OUT2" x="0" y="3.25" dx="4" dy="1.7" layer="1" rot="R180"/>
+<smd name="GND" x="-2.3" y="-3.15" dx="1.5" dy="2" layer="1" rot="R180"/>
+<smd name="OUT" x="0" y="-3.15" dx="1.5" dy="2" layer="1" rot="R180"/>
+<smd name="IN" x="2.3" y="-3.15" dx="1.5" dy="2" layer="1" rot="R180"/>
+<smd name="OUT2" x="0" y="3.15" dx="4" dy="2" layer="1" rot="R180"/>
 </package>
 <package name="SMD_2512">
 <smd name="P$1" x="-2.1" y="0" dx="1" dy="3.2" layer="1" rot="R180"/>
@@ -2270,9 +2270,9 @@ RS http://it.rs-online.com/web/p/regolatori-di-tensione-low-dropout/5339577/</de
 <symbol name="VOLTAGE_REG">
 <description>&lt;h4&gt;Voltage regulator 78xx series&lt;/h4&gt;
 Voltage regulators of the LM78xx family.</description>
-<pin name="VIN" x="-12" y="0" length="middle"/>
-<pin name="OUT" x="12.5" y="0" length="middle" rot="R180"/>
-<pin name="GND" x="0" y="-10" length="middle" rot="R90"/>
+<pin name="VIN" x="-12" y="0" visible="off" length="middle"/>
+<pin name="OUT" x="12.5" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="GND" x="0" y="-10" visible="off" length="middle" rot="R90"/>
 <wire x1="-7" y1="3" x2="7.5" y2="3" width="0.2" layer="94"/>
 <wire x1="7.5" y1="3" x2="7.5" y2="-5" width="0.2" layer="94"/>
 <wire x1="7.5" y1="-5" x2="-7" y2="-5" width="0.2" layer="94"/>
@@ -2765,14 +2765,14 @@ http://it.rs-online.com/web/p/connettori-rj45/2578779/</description>
 </deviceset>
 <deviceset name="LM1117_SMD">
 <gates>
-<gate name="G$1" symbol="LM1117" x="0" y="1"/>
+<gate name="G$1" symbol="VOLTAGE_REG" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT-223">
+<device name="SMD" package="SOT-223">
 <connects>
 <connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="OUT" pad="OUT OUT2"/>
 <connect gate="G$1" pin="VIN" pad="IN"/>
-<connect gate="G$1" pin="VOUT" pad="OUT OUT2"/>
 </connects>
 <technologies>
 <technology name=""/>
