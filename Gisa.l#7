@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1083,6 +1083,12 @@
 <pad name="8" x="8.89" y="0" drill="1" shape="long" rot="R90"/>
 <text x="-8.89" y="2.05" size="1" layer="25">&gt;NAME</text>
 <text x="0" y="1.96" size="1" layer="27">&gt;VALUE</text>
+</package>
+<package name="1P_ROUND">
+<pad name="P$1" x="0" y="0" drill="1" diameter="1.6764"/>
+</package>
+<package name="1P_SMD">
+<smd name="P$1" x="0" y="0" dx="1.5" dy="1.5" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -2352,6 +2358,9 @@ Voltage regulators of the LM78xx family.</description>
 <wire x1="0.5" y1="1" x2="0.5" y2="0" width="0.2" layer="94"/>
 <wire x1="0.5" y1="0" x2="0.5" y2="-1" width="0.2" layer="94"/>
 <wire x1="0.5" y1="-1" x2="0" y2="-1.5" width="0.2" layer="94"/>
+</symbol>
+<symbol name="HEADER1P">
+<pin name="P" x="-5" y="0" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3851,6 +3860,38 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <connects>
 <connect gate="G$1" pin="IN" pad="P$1"/>
 <connect gate="G$1" pin="OUT" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2.54_ROUND" package="2P">
+<connects>
+<connect gate="G$1" pin="IN" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="HEADER1P">
+<gates>
+<gate name="G$1" symbol="HEADER1P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="TH_ROUND" package="1P_ROUND">
+<connects>
+<connect gate="G$1" pin="P" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD_1X1" package="1P_SMD">
+<connects>
+<connect gate="G$1" pin="P" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
