@@ -2360,7 +2360,8 @@ Voltage regulators of the LM78xx family.</description>
 <wire x1="0.5" y1="-1" x2="0" y2="-1.5" width="0.2" layer="94"/>
 </symbol>
 <symbol name="HEADER1P">
-<pin name="P" x="-5" y="0" length="middle"/>
+<pin name="P" x="-5" y="0" visible="off" length="middle"/>
+<text x="-5" y="-1.5" size="1" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>

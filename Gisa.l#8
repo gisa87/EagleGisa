@@ -3890,6 +3890,9 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 </technologies>
 </device>
 <device name="SMD_1X1" package="1P_SMD">
+<connects>
+<connect gate="G$1" pin="P" pad="P$1"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>

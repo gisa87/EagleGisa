@@ -3997,6 +3997,28 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 </device>
 </devices>
 </deviceset>
+<deviceset name="MCP2551">
+<gates>
+<gate name="G$1" symbol="MCP2551" x="0" y="0"/>
+</gates>
+<devices>
+<device name="PDIP8" package="PDIP8">
+<connects>
+<connect gate="G$1" pin="CANH" pad="7"/>
+<connect gate="G$1" pin="CANL" pad="6"/>
+<connect gate="G$1" pin="RS" pad="8"/>
+<connect gate="G$1" pin="RXD" pad="4"/>
+<connect gate="G$1" pin="TXD" pad="1"/>
+<connect gate="G$1" pin="VDD" pad="3"/>
+<connect gate="G$1" pin="VREF" pad="5"/>
+<connect gate="G$1" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
