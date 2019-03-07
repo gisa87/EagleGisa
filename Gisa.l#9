@@ -1091,6 +1091,7 @@
 <package name="1P_SMD">
 <smd name="P$1" x="0" y="0" dx="1.5" dy="1.5" layer="1"/>
 </package>
+<<<<<<< Updated upstream
 <package name="PDIP18">
 <pad name="1" x="-3.81" y="10.16" drill="1" shape="square"/>
 <pad name="2" x="-3.81" y="7.62" drill="1" shape="long"/>
@@ -1113,6 +1114,8 @@
 <text x="-4.6" y="11.76" size="1" layer="25">&gt;NAME</text>
 <text x="-5.03" y="-12.6" size="1" layer="27">&gt;VALUE</text>
 </package>
+=======
+>>>>>>> Stashed changes
 </packages>
 <symbols>
 <symbol name="ETHERNET_RJ45_FEM_PCB">
@@ -2386,6 +2389,7 @@ Voltage regulators of the LM78xx family.</description>
 <pin name="P" x="-5" y="0" visible="off" length="middle"/>
 <text x="-5" y="-1.5" size="1" layer="95">&gt;NAME</text>
 </symbol>
+<<<<<<< Updated upstream
 <symbol name="MCP2515">
 <pin name="TXCAN" x="-14.5" y="9" length="middle"/>
 <pin name="RXCAN" x="-14.5" y="6.5" length="middle"/>
@@ -2468,6 +2472,8 @@ Voltage regulators of the LM78xx family.</description>
 <text x="-10.5" y="20" size="1.778" layer="94">Arduino Uno</text>
 <text x="-11.5" y="29" size="1" layer="95">&gt;NAME</text>
 </symbol>
+=======
+>>>>>>> Stashed changes
 </symbols>
 <devicesets>
 <deviceset name="ETH_RJ45_FEM">
@@ -4003,6 +4009,7 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <technology name=""/>
 </technologies>
 </device>
+<<<<<<< Updated upstream
 </devices>
 </deviceset>
 <deviceset name="MCP2515">
@@ -4057,6 +4064,8 @@ A A4 formatted orizzontal frame with space optimization an preformatted Gisa hea
 <technology name=""/>
 </technologies>
 </device>
+=======
+>>>>>>> Stashed changes
 </devices>
 </deviceset>
 </devicesets>
